@@ -6,6 +6,24 @@
     </head>
     <body>
         <script>
+            function main() {
+                
+                let playerSelection = getInput()
+                let computerSelection = computerChoice()
+                let result = play(computerSelection, playerSelection)
+                
+                let resultString = 'You ' + result[0] + '! ' + capitalize(result[1]) + ' beats ' + result[2] + '!'
+                console.log(resultString)
+            }
+
+            function capitalize(aString) {
+                // Returns a string with only the first letter capitalized.
+                
+                first = aString[0].toUpperCase()
+                rest = aString.slice(1).toLowerCase()
+                return first + rest
+            }
+
             function getInput() {
                 // Gets the player's choice and ensures that it is valid. Returns the choice.
                 
@@ -25,7 +43,35 @@
                 return choices[randomIndex]
             }
 
-            console.log(computerChoice())
+            function play(computerSelection, playerSelection) {
+                // Compares two choices to determine the winner. Returns a list containing
+                // a boolean value representing the player's victory or loss, the winning choice and the losing choice.
+
+                var beats = 'paper'
+                var loses = 'rock'
+                switch (playerSelection) {
+                    case 'rock':
+                        beats = 'scissors'
+                        loses = 'paper'
+                        break;
+                    case 'paper':
+                        beats = 'rock'
+                        loses = 'scissors'
+                }
+
+                var result = 'lose'
+                var winner = computerSelection
+                var loser = playerSelection
+                if (computerSelection == beats) {
+                    result = 'win'
+                    winner = playerSelection
+                    loser = computerSelection
+                }
+
+                return [result, winner, loser]
+            }
+
+            main()
         </script>
     </body>
 </html>
