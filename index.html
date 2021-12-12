@@ -8,70 +8,71 @@
         <script>
             function main() {
                 
-                let playerSelection = getInput()
-                let computerSelection = computerChoice()
-                let result = play(computerSelection, playerSelection)
+                let playerSelection = getInput();
+                let computerSelection = computerChoice();
+                let result = play(computerSelection, playerSelection);
                 
-                let resultString = 'You ' + result[0] + '! ' + capitalize(result[1]) + ' beats ' + result[2] + '!'
-                console.log(resultString)
+                let resultString = 'You ' + result[0] + '! ' + capitalize(result[1]) + 
+                        ' beats ' + result[2] + '!';
+                console.log(resultString);
             }
 
             function capitalize(aString) {
                 // Returns a string with only the first letter capitalized.
                 
-                first = aString[0].toUpperCase()
-                rest = aString.slice(1).toLowerCase()
-                return first + rest
+                first = aString[0].toUpperCase();
+                rest = aString.slice(1).toLowerCase();
+                return first + rest;
             }
 
             function getInput() {
                 // Gets the player's choice and ensures that it is valid. Returns the choice.
                 
-                var input = prompt('Rock Paper Scissors!').toLowerCase()
-                let validInputs = ['rock', 'paper', 'scissors']
+                var input = prompt('Rock Paper Scissors!').toLowerCase();
+                let validInputs = ['rock', 'paper', 'scissors'];
                 while (validInputs.includes(input) == false) {
-                    var input = prompt('Please choose Rock, Paper, or Scissors!')
+                    var input = prompt('Please choose Rock, Paper, or Scissors!');
                 }
-                return input
+                return input;
             }
             
             function computerChoice() {
                 // Generates a random choice for the computer player.
 
-                choices = ['rock', 'paper', 'scissors']
-                randomIndex = Math.floor(Math.random()*3)
-                return choices[randomIndex]
+                choices = ['rock', 'paper', 'scissors'];
+                randomIndex = Math.floor(Math.random()*3);
+                return choices[randomIndex];
             }
 
             function play(computerSelection, playerSelection) {
                 // Compares two choices to determine the winner. Returns a list containing
                 // a boolean value representing the player's victory or loss, the winning choice and the losing choice.
 
-                var beats = 'paper'
-                var loses = 'rock'
+                var beats = 'paper';
+                var loses = 'rock';
                 switch (playerSelection) {
-                    case 'rock':
-                        beats = 'scissors'
-                        loses = 'paper'
+                    case 'rock':;
+                        beats = 'scissors';
+                        loses = 'paper';
                         break;
                     case 'paper':
-                        beats = 'rock'
-                        loses = 'scissors'
+                        beats = 'rock';
+                        loses = 'scissors';
                 }
 
-                var result = 'lose'
-                var winner = computerSelection
-                var loser = playerSelection
+                var result = 'lose';
+                var winner = computerSelection;
+                var loser = playerSelection;
                 if (computerSelection == beats) {
-                    result = 'win'
-                    winner = playerSelection
-                    loser = computerSelection
+                    result = 'win';
+                    winner = playerSelection;
+                    loser = computerSelection;
                 }
 
-                return [result, winner, loser]
+                return [result, winner, loser];
             }
 
-            main()
+            main();
         </script>
     </body>
 </html>
