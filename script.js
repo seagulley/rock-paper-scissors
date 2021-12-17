@@ -1,17 +1,3 @@
-// function main() {
-                
-//     let playerSelection = getInput();
-//     let computerSelection = computerChoice();
-//     var result = play(computerSelection, playerSelection);
-    
-//     if (checkDraw(computerSelection, playerSelection)) {
-//         result = [null];
-//     };
-
-//     let resultString = getResultString(result);
-//     console.log(resultString);
-// }
-
 function capitalize(aString) {
     // Returns a string with only the first letter capitalized.
     
@@ -31,18 +17,6 @@ function getResultString(aList){
     };
     return resultString;
 }
-
-// function getInput() {
-//     // Gets the player's choice and ensures that it is valid. 
-//     // Returns the choice.
-    
-//     var input = prompt('Rock Paper Scissors!').toLowerCase();
-//     let validInputs = ['rock', 'paper', 'scissors'];
-//     while (validInputs.includes(input) == false) {
-//         var input = prompt('Please choose Rock, Paper, or Scissors!');
-//     }
-//     return input;
-// }
 
 function computerChoice() {
     // Generates a random choice for the computer player.
@@ -86,8 +60,6 @@ function play(computerSelection, playerSelection) {
 
     return [result, winner, loser];
 }
-
-// main();
 
 var buttons = document.querySelectorAll('.button');
 var playerSelection;
