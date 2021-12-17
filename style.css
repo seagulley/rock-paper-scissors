@@ -25,7 +25,8 @@ body {
 }
 
 .choices {
-    width: 50vw;
+    width: 30vw;
+    min-width: 400px;
     display: flex;
     justify-content: space-evenly;
     padding: 0;
